@@ -1,6 +1,5 @@
 package kmruiz.domain.post
 
-import kmruiz.domain.user.User
 import java.util.*
 
 data class PostService(val postRepository: PostRepository, val postViewReadModel: PostViewReadModel) {
