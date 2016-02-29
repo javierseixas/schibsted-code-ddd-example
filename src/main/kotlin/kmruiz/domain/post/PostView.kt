@@ -9,7 +9,7 @@ interface PostViewer {
 }
 
 interface PostViewReadModel {
-    fun findLast(idQuery: PostViewIdQuery): List<Post>
+    fun findLast(idQuery: PostViewIdQuery): List<PostView>
 }
 
 data class PostView(val author: String, val title: String, val body: String, val publicationDate: Date)

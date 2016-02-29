@@ -9,7 +9,7 @@ data class PostService(val postRepository: PostRepository, val postViewReadModel
         return postRepository.savePost(post)
     }
 
-    fun last(viewer: PostViewer, startDate: Date): List<Post> {
+    fun last(viewer: PostViewer, startDate: Date): List<PostView> {
         val idQuery = viewer.selectPostIndex(startDate)
         return postViewReadModel.findLast(idQuery)
     }
