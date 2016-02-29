@@ -1,10 +1,12 @@
 package kmruiz.domain.user
 
-import kmruiz.domain.post.PostPublisher
-import kmruiz.domain.post.SinglePendingPost
-import kmruiz.domain.post.SinglePublishedPost
+import kmruiz.domain.post.*
+import java.util.*
 
-interface User: PostPublisher
+interface User: PostPublisher, PostViewer {
+    override fun selectPostIndex(startDate: Date) = PostViewIdQuery(startDate, 15)
+}
+
 interface Administrator: User
 
 data class BlogUser(val id: Long, val name: String): User {
